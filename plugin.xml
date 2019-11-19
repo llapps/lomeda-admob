@@ -12,7 +12,7 @@
     </js-module>
 
     <platform name="android">
-        <preference name="APPLICATION_ID" default="xxx" />
+        <preference name="APPLICATION_ID" default="ca-app-pub-6681943608991578~3835909604" />
         <preference name="PLAY_SERVICES_VERSION" default="17.2.0"/>
         <source-file src="src/android/src/com/creativeads/AdService.java" target-dir="src/com/creativeads"/>
         <source-file src="src/android/src/com/creativeads/AdBanner.java" target-dir="src/com/creativeads"/>
