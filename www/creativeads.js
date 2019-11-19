@@ -37,18 +37,22 @@
                 this.signal.on(e, i)
             }
         }, i.Interstitial = function(i, t) {
+            alert("test");
             this.id = i, this.serviceName = t, this.signal = new e.Signal, this.ready = !1
         }, i.Interstitial.prototype = {
             show: function() {
                 this.ready = !1, e.exec(this.serviceName, "showInterstitial", [this.id])
             },
             load: function() {
+                alert("load");
                 e.exec(this.serviceName, "loadInterstitial", [this.id])
             },
             isReady: function() {
+                alert("ready");
                 return this.ready
             },
             on: function(e, i) {
+                alert("on");
                 this.signal.on(e, i)
             }
         }
@@ -135,7 +139,6 @@
 }(),
 function() {
     console.log("creating CreativeAds...");
-    alert("los");
     CreativeAds.define("CreativeAds", function(e) {
         console.log("CreativeAds defined..." + JSON.stringify(e));
         return e.AdMob = new CreativeAds.AdMob.AdService("LDAdMobPlugin"), e
