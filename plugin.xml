@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="creativeads-admob" version="1.0.3">
+    <name>CreativeAds admob</name>
+    <description>Admob implementation for CreativeAds mobile</description>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,creativeads,plugins</keywords>
+    <js-module src="www/creativeads_utils.js" name="CreativeAdsUtils">
+        <runs/>
+    </js-module>
+    <js-module src="www/creativeads.js" name="CreativeAds">
+        <runs/>
+    </js-module>
+
+    <platform name="android">
+        <preference name="APPLICATION_ID" default="xxx" />
+        <preference name="PLAY_SERVICES_VERSION" default="17.2.0"/>
+        <source-file src="src/android/src/com/creativeads/AdService.java" target-dir="src/com/creativeads"/>
+        <source-file src="src/android/src/com/creativeads/AdBanner.java" target-dir="src/com/creativeads"/>
+        <source-file src="src/android/src/com/creativeads/AbstractAdBanner.java" target-dir="src/com/creativeads"/>
+        <source-file src="src/android/src/com/creativeads/AdInterstitial.java" target-dir="src/com/creativeads"/>
+        <source-file src="src/android/src/com/creativeads/AbstractAdInterstitial.java" target-dir="src/com/creativeads"/>
+        <source-file src="src/android/src/com/creativeads/AdRewardedVideo.java" target-dir="src/com/creativeads"/>
+        <source-file src="src/android/src/com/creativeads/AbstractAdRewardedVideo.java" target-dir="src/com/creativeads"/>
+
+        <source-file src="src/android/src/com/creativeads/admob/AdBannerAdMob.java" target-dir="src/com/creativeads/admob"/>
+        <source-file src="src/android/src/com/creativeads/admob/AdInterstitialAdMob.java" target-dir="src/com/creativeads/admob"/>
+        <source-file src="src/android/src/com/creativeads/admob/AdRewardedAdMob.java" target-dir="src/com/creativeads/admob"/>
+        <source-file src="src/android/src/com/creativeads/admob/AdMobUtils.java" target-dir="src/com/creativeads/admob"/>
+        
+        <source-file src="src/android/src/com/creativeads/admob/AdServiceAdMob.java" target-dir="src/com/creativeads/admob"/>
+        <source-file src="src/android/src/com/creativeads/cordova/AdMobPlugin.java" target-dir="src/com/creativeads/cordova"/>
+        <source-file src="src/android/src/com/creativeads/cordova/AdServicePlugin.java" target-dir="src/com/creativeads/cordova"/>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="LDAdService">
+                <param name="android-package" value="com.creativeads.cordova.AdServicePlugin"/>
+                <param name="onload" value="true" />
+            </feature>
+            <feature name="LDAdMobPlugin">
+                <param name="android-package" value="com.creativeads.cordova.AdMobPlugin"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        </config-file>
+
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.google.android.gms.ads.AdActivity"
+                      android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        </config-file>
+
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
+          <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="$APPLICATION_ID" />
+        </config-file>
+
+
+        <framework src="com.google.android.gms:play-services-ads:$PLAY_SERVICES_VERSION" />
+        <framework src="android/build-extras.gradle" custom="true" type="gradleReference" />
+        <!-- Hooks -->
+        <!-- <hook src="scripts/hooks/beforePrepare.js" type="after_plugin_install" />
+        <hook src="scripts/hooks/afterPrepare.js" type="after_plugin_add" />
+        <hook src="scripts/hooks/beforePrepare.js" type="before_prepare" />
+        <hook src="scripts/hooks/afterPrepare.js" type="after_prepare" /> -->
+    </platform>
+
+    <!-- <hook type="after_prepare" src="scripts/hooks/beforePluginInstall.js" />
+    <hook type="before_plugin_install" src="scripts/hooks/beforePluginInstall.js" />
+    <hook type="before_platform_add" src="scripts/hooks/beforePluginInstall.js" /> -->
+   
+</plugin>

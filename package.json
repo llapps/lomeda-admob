@@ -1,0 +1,53 @@
+{
+  "_from": "creativeads",
+  "_id": "creativeads",
+  "_inBundle": false,
+  "_location": "/creativeads",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "creativeads",
+    "name": "creativeads",
+    "escapedName": "creativeads",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_spec": "creativeads-admob",
+  "author": {
+    "name": "CreativeAds"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "creativeads",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "q": "^1.4.1"
+  },
+  "deprecated": false,
+  "devDependencies": {
+    "xml2js": "^0.4.19"
+  },
+  "keywords": [
+    "cordova",
+    "ads",
+    "banner",
+    "interstitial",
+    "monetization",
+    "ad",
+    "plugins",
+    "ecosystem:cordova"
+  ],
+  "name": "creativeads",
+  "version": "1.0.0"
+}
