@@ -73,7 +73,6 @@
         var t = 0;
         i.AdService = function(e) {
             console.log("AdService...service " + e);
-            alert("AdService...service " + e);
             this.serviceName = e, this.activeAds = {}
         };
 
@@ -92,10 +91,8 @@
                                  this.initialized = !0)
         }, n.configure = function(i) {
             console.log("plugin, configure...");
-            alert("plugin, configure...");
             var t = e.getPlatform();
             console.log("plugin, configure received...i[t]: " + JSON.stringify(i[t]));
-            alert("plugin, configure received...i[t]: " + JSON.stringify(i[t]));
             t === e.PlatformType.AMAZON && i[e.PlatformType.ANDROID] && (t = e.PlatformType.ANDROID), i[t] && (i = i[t]), e.exec(this.serviceName, "configure", [i])
         }, n.setConsent = function(i) {
             var t = e.getPlatform();
@@ -118,6 +115,7 @@
             var s = new i.Interstitial(o, this.serviceName);
             return this.activeAds[o] = s, s
         }, n.releaseInterstitial = function(i) {
+            alert("release");
             e.exec(this.serviceName, "releaseInterstitial", [i.id]), delete this.activeAds[i.id]
         }, n.createRewardedVideo = function(n) {
             this.init();
