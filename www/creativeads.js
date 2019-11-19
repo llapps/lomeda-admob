@@ -115,7 +115,6 @@
             var s = new i.Interstitial(o, this.serviceName);
             return this.activeAds[o] = s, s
         }, n.releaseInterstitial = function(i) {
-            alert("release");
             e.exec(this.serviceName, "releaseInterstitial", [i.id]), delete this.activeAds[i.id]
         }, n.createRewardedVideo = function(n) {
             this.init();
