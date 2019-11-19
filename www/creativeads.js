@@ -43,6 +43,7 @@
                 this.ready = !1, e.exec(this.serviceName, "showInterstitial", [this.id])
             },
             load: function() {
+                alert("load");
                 e.exec(this.serviceName, "loadInterstitial", [this.id])
             },
             isReady: function() {
