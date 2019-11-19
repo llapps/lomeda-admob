@@ -43,7 +43,6 @@
                 this.ready = !1, e.exec(this.serviceName, "showInterstitial", [this.id])
             },
             load: function() {
-                alert("load");
                 e.exec(this.serviceName, "loadInterstitial", [this.id])
             },
             isReady: function() {
@@ -135,7 +134,8 @@
     })
 }(),
 function() {
-    console.log("creating CreativeAds...")
+    console.log("creating CreativeAds...");
+    alert("los");
     CreativeAds.define("CreativeAds", function(e) {
         console.log("CreativeAds defined..." + JSON.stringify(e));
         return e.AdMob = new CreativeAds.AdMob.AdService("LDAdMobPlugin"), e
