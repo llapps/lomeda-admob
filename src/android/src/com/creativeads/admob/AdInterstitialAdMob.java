@@ -13,11 +13,15 @@ public class AdInterstitialAdMob extends AbstractAdInterstitial {
     private boolean adsConsent;
     private boolean isTest;
     private String testDeviceId;
+    private int gender;
+    private int underAgeOfConsent;
 
-    AdInterstitialAdMob(Context ctx, String adUnit, boolean personalizedAdsConsent, String testDeviceId, boolean isTest) {
+    AdInterstitialAdMob(Context ctx, String adUnit, boolean personalizedAdsConsent, String testDeviceId, boolean isTest, int gender, int underAgeOfConsent) {
         adsConsent = personalizedAdsConsent;
         this.isTest = isTest;
         this.testDeviceId = testDeviceId;
+        this.gender = gender;
+        this.underAgeOfConsent = underAgeOfConsent;
 
         _interstitial = new InterstitialAd(ctx);
         _interstitial.setAdUnitId(adUnit);
@@ -55,7 +59,8 @@ public class AdInterstitialAdMob extends AbstractAdInterstitial {
 
     @Override
     public void loadAd() {
-        AdRequest adRequest = AdMobUtils.getAdRequest(adsConsent, isTest, testDeviceId);
+        AdRequest adRequest = AdMobUtils.getAdRequest(adsConsent, isTest, testDeviceId, gender, underAgeOfConsent);
+        // AdRequest adRequest = AdMobUtils.getAdRequest(adsConsent, isTest, testDeviceId);
         // .addTestDevice("A8CA27EE6F83C9D384A8523CDE61C70C")
 
         _interstitial.loadAd(adRequest);
