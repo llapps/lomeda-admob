@@ -69,6 +69,7 @@ public class AdInterstitialAdMob extends AbstractAdInterstitial {
     @Override
     public void show() {
         if (_interstitial.isLoaded()) {
+            MediationTestSuite.launch(MainActivity.this);
             _interstitial.show();
         } else {
             loadAd();
