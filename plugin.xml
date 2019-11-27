@@ -12,8 +12,9 @@
     </js-module>
 
     <platform name="android">
-        <preference name="APPLICATION_ID" default="ca-app-pub-6681943608991578~3835909604" />
-        <preference name="PLAY_SERVICES_VERSION" default="17.2.0"/>
+        <preference name="APPLICATION_ID" default="xxx" />
+        <preference name="PLAY_SERVICES_VERSION" default="18.3.0"/>
+        <preference name="FACEBOOK_MEDIATION_VERSION" default="5.6.0.0"/>
         <source-file src="src/android/src/com/creativeads/AdService.java" target-dir="src/com/creativeads"/>
         <source-file src="src/android/src/com/creativeads/AdBanner.java" target-dir="src/com/creativeads"/>
         <source-file src="src/android/src/com/creativeads/AbstractAdBanner.java" target-dir="src/com/creativeads"/>
@@ -47,27 +48,18 @@
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
         </config-file>
 
-        <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application">
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <!-- <application 
+                xmlns:tools="http://schemas.android.com/tools"
+                tools:replace="android:appComponentFactory" /> -->
+            <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="$APPLICATION_ID" />
             <activity android:name="com.google.android.gms.ads.AdActivity"
                       android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
         </config-file>
 
-        <config-file parent="/manifest/application" target="AndroidManifest.xml">
-          <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="$APPLICATION_ID" />
-        </config-file>
-
-
         <framework src="com.google.android.gms:play-services-ads:$PLAY_SERVICES_VERSION" />
+        <framework src="com.google.ads.mediation:facebook:$FACEBOOK_MEDIATION_VERSION" />
         <framework src="android/build-extras.gradle" custom="true" type="gradleReference" />
-        <!-- Hooks -->
-        <!-- <hook src="scripts/hooks/beforePrepare.js" type="after_plugin_install" />
-        <hook src="scripts/hooks/afterPrepare.js" type="after_plugin_add" />
-        <hook src="scripts/hooks/beforePrepare.js" type="before_prepare" />
-        <hook src="scripts/hooks/afterPrepare.js" type="after_prepare" /> -->
     </platform>
-
-    <!-- <hook type="after_prepare" src="scripts/hooks/beforePluginInstall.js" />
-    <hook type="before_plugin_install" src="scripts/hooks/beforePluginInstall.js" />
-    <hook type="before_platform_add" src="scripts/hooks/beforePluginInstall.js" /> -->
    
 </plugin>

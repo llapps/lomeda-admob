@@ -16,7 +16,9 @@ CreativeAds.AdMob.configure({
         interstitial: "ca-app-pub-3940256099942544/1033173712",
         personalizedAdsConsent: false,
         testDeviceId: "A8CA27EE6F83C9D384A8523CDE61C70C",
-        isTest: true
+        isTest: true,
+        gender: "MALE",
+        uAgeConsent: "FALSE"
     }
 });
 ```
@@ -24,9 +26,21 @@ CreativeAds.AdMob.configure({
 appId: the appId for AdMob
 banner: the ad unit id for the banner
 interstitial: the ad unit id for the interstitial
-personalizedAdsConsent: GDPR consent bool. (see later)
-testDeviceId: test device id for testing with own AdMob units (not the provided test ad units)
-isTest: true if we are in test mode. All the AdMob request is sent with the testDeviceId param.
+personalizedAdsConsent(optional): GDPR consent bool. (see later)
+testDeviceId(optional): test device id for testing with own AdMob units (not the provided test ad units)
+isTest(optional): true if we are in test mode. All the AdMob request is sent with the testDeviceId param.
+gender(optional): gender value for mediation values: "MALE"/"FEMALE",
+uAgeConsent(optional): under age of consent values: "TRUE"/"FALSE"
+
+### Getting the test device id
+To test your ad, you can use your device as test device that you can set in the configuration.
+To get your test device id, check the log of your app and grep for the text 
+```
+AdRequest.Builder.addTestDevice("XXXXXXXXXXXXXXXXXXXXXXXXXXXX") 
+```
+Where 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+is your device id.
 
 ## Creating/releasing Banner
 ```

@@ -18,11 +18,16 @@ public class AdBannerAdMob extends AbstractAdBanner {
     private boolean adsConsent;
     private boolean isTest;
     private String testDeviceId;
+    private int gender;
+    private int underAgeOfConsent;
 
-    AdBannerAdMob(Context ctx, String adUnit, BannerSize size, boolean personalizedAdsConsent, String testDeviceId, boolean isTest) {
+    AdBannerAdMob(Context ctx, String adUnit, BannerSize size, boolean personalizedAdsConsent, String testDeviceId, boolean isTest, int gender, int underAgeOfConsent) {
         adsConsent = personalizedAdsConsent;
         this.isTest = isTest;
         this.testDeviceId = testDeviceId;
+
+        this.gender = gender;
+        this.underAgeOfConsent = underAgeOfConsent;
 
         banner = new AdView(ctx);
 
@@ -83,7 +88,7 @@ public class AdBannerAdMob extends AbstractAdBanner {
 
     @Override
     public void loadAd() {
-        AdRequest adRequest = AdMobUtils.getAdRequest(adsConsent, isTest, testDeviceId);
+        AdRequest adRequest = AdMobUtils.getAdRequest(adsConsent, isTest, testDeviceId, gender, underAgeOfConsent);
         banner.loadAd(adRequest);
     }
 

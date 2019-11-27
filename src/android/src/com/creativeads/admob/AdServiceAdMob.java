@@ -3,12 +3,13 @@ package com.creativeads.admob;
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
+import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
 import com.creativeads.AdBanner;
 import com.creativeads.AdInterstitial;
 import com.creativeads.AdRewardedVideo;
 import com.creativeads.AdService;
-import com.unity3d.ads.metadata.MetaData;
+// import com.unity3d.ads.metadata.MetaData;
 
 import org.json.JSONObject;
 
@@ -22,6 +23,9 @@ public class AdServiceAdMob implements AdService {
     private String _testDeviceId;
     private boolean _isTest;
     private Activity _activity;
+
+    private int _gender;
+    private int _uAgeConsent;
 
     public void configure(Activity activity, JSONObject obj) {
         String appId = obj.optString("appId");
@@ -40,6 +44,8 @@ public class AdServiceAdMob implements AdService {
         String interstitial = obj.optString("interstitial");
         String rewardedVideo = obj.optString("rewardedVideo");
         boolean personalizedAdsConsent = obj.optBoolean("personalizedAdsConsent");
+        String gender = obj.optString("gender");
+        String uAgeConsent = obj.optString("uAgeConsent");
         if (appId == null) {
             throw new RuntimeException("Empty App AdUnit");
         }
@@ -55,7 +61,42 @@ public class AdServiceAdMob implements AdService {
         _interstitialAdUnit = interstitial;
         _rewardedVideoAdUnit = rewardedVideo;
         _personalizedAdsConsent = personalizedAdsConsent;
+        _gender = getAdGender(gender);
+        _uAgeConsent = getUAgeConsent(uAgeConsent);
     }
+
+    /**
+     *
+     * @param gender Gender in string (MALE/FEMALE)
+     * @return
+     */
+    private int getAdGender(String gender) {
+        if("MALE".equals(gender.toUpperCase())) {
+            return AdRequest.GENDER_MALE;
+        } else if("FEMALE".equals(gender.toUpperCase())) {
+            return AdRequest.GENDER_FEMALE;
+        } else {
+            Log.d(TAG, "no gender...");
+            return AdRequest.GENDER_UNKNOWN;
+        }
+    }
+
+    /**
+     *
+     * @param uAgeConsent under age of consent (TRUE/FALSE)
+     * @return
+     */
+    private int getUAgeConsent(String uAgeConsent) {
+        if("TRUE".equals(uAgeConsent.toUpperCase())) {
+            return AdRequest.TAG_FOR_UNDER_AGE_OF_CONSENT_TRUE;
+        } else if("FALSE".equals(uAgeConsent.toUpperCase())) {
+            return AdRequest.TAG_FOR_UNDER_AGE_OF_CONSENT_FALSE;
+        } else {
+            Log.d(TAG, "no under age of consent...");
+            return AdRequest.TAG_FOR_UNDER_AGE_OF_CONSENT_UNSPECIFIED;
+        }
+    }
+
 
     /**
      * Sets the consent of the user. This consent is used for each type of ads
@@ -64,7 +105,9 @@ public class AdServiceAdMob implements AdService {
     public void setConsent(boolean consentGiven) {
         Log.d(TAG, "setConsent: " + consentGiven);
         _personalizedAdsConsent = consentGiven;
-        MetaData gdprMetaData = new MetaData(_activity); gdprMetaData.set("gdpr.consent", true); gdprMetaData.commit();
+        // MetaData gdprMetaData = new MetaData(_activity); 
+        // gdprMetaData.set("gdpr.consent", true); 
+        // gdprMetaData.commit();
     }
 
     public AdBanner createBanner(Context ctx) {
@@ -78,7 +121,7 @@ public class AdServiceAdMob implements AdService {
         if (adUnit == null || adUnit.length() == 0) {
             throw new RuntimeException("Empty AdUnit");
         }
-        return new AdBannerAdMob(ctx, adUnit, size, _personalizedAdsConsent, _testDeviceId, _isTest);
+        return new AdBannerAdMob(ctx, adUnit, size, _personalizedAdsConsent, _testDeviceId, _isTest, _gender, _uAgeConsent);
     }
 
     public AdInterstitial createInterstitial(Context ctx) {
@@ -93,7 +136,7 @@ public class AdServiceAdMob implements AdService {
         if (adUnit == null || adUnit.length() == 0) {
             throw new RuntimeException("Empty AdUnit");
         }
-        return new AdInterstitialAdMob(ctx, adUnit, _personalizedAdsConsent, _testDeviceId, _isTest);
+        return new AdInterstitialAdMob(ctx, adUnit, _personalizedAdsConsent, _testDeviceId, _isTest, _gender, _uAgeConsent);
     }
 
     public AdRewardedVideo createRewardedVideo(Context ctx) {
