@@ -90,6 +90,7 @@ public class AdBannerAdMob extends AbstractAdBanner {
     public void loadAd() {
         AdRequest adRequest = AdMobUtils.getAdRequest(adsConsent, isTest, testDeviceId, gender, underAgeOfConsent);
         banner.loadAd(adRequest);
+        MediationTestSuite.Show();
     }
 
     @Override
