@@ -10,6 +10,7 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.creativeads.AbstractAdBanner;
 import com.creativeads.AdBanner;
+import com.google.android.ads.mediationtestsuite.MediationTestSuite;
 
 
 public class AdBannerAdMob extends AbstractAdBanner {
