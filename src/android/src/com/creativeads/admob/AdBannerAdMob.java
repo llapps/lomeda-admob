@@ -46,7 +46,7 @@ public class AdBannerAdMob extends AbstractAdBanner {
                 admobSize = AdSize.LEADERBOARD;
                 break;
             default:
-                admobSize = AdSize.BANNER;
+                admobSize = AdSize.SMART_BANNER;
                 break;
         }
 
