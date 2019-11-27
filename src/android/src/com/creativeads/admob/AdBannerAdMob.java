@@ -10,7 +10,6 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.creativeads.AbstractAdBanner;
 import com.creativeads.AdBanner;
-import com.google.android.ads.mediationtestsuite.MediationTestSuite;
 
 
 public class AdBannerAdMob extends AbstractAdBanner {
@@ -91,7 +90,6 @@ public class AdBannerAdMob extends AbstractAdBanner {
     public void loadAd() {
         AdRequest adRequest = AdMobUtils.getAdRequest(adsConsent, isTest, testDeviceId, gender, underAgeOfConsent);
         banner.loadAd(adRequest);
-        MediationTestSuite.Show();
     }
 
     @Override
