@@ -18,7 +18,8 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.facebook.samples.AdUnitsSample;
+package com.creativeads.admob;
+
 
 import android.content.Context;
 import android.util.Log;
