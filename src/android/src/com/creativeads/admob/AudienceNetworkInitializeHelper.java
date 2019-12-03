@@ -48,12 +48,12 @@ public class AudienceNetworkInitializeHelper implements AudienceNetworkAds.InitL
                 .withMediationService("GOOGLE: 5.4.0.0")
                 .initialize();
              
-            Log.d("olli", "facebook init");
+            Log.d("fbolli", "facebook init");
  
     }
 
     @Override
     public void onInitialized(AudienceNetworkAds.InitResult result) {
-        Log.d("olli", result.getMessage());
+        Log.d("fbolli", result.getMessage());
     }
 }
