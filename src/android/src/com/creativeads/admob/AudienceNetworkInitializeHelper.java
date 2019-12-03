@@ -55,6 +55,6 @@ public class AudienceNetworkInitializeHelper
 
     @Override
     public void onInitialized(AudienceNetworkAds.InitResult result) {
-        Log.d(AudienceNetworkAds.TAG, result.getMessage());
+        Log.d("olli", result.getMessage());
     }
 }
