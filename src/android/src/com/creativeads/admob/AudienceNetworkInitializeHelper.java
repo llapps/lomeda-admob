@@ -43,19 +43,14 @@ public class AudienceNetworkInitializeHelper
      * @param context Application or Activity.
      */
     static void initialize(Context context) {
-         if (!AudienceNetworkAds.isInitialized(context)) {
-            if (DEBUG) {
-                AdSettings.turnOnSDKDebugger(context);
-            }
-             
-             AudienceNetworkAds
+          AudienceNetworkAds
                 .buildInitSettings(context)
                 .withMediationService("GOOGLE: 17.2.1")
                 .withInitListener(new AudienceNetworkInitializeHelper())
                 .initialize();
              
             Log.d("olli", "facebook init");
-         }
+ 
     }
 
     @Override
