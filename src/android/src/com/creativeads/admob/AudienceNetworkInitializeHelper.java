@@ -40,8 +40,10 @@ public class AudienceNetworkInitializeHelper implements AudienceNetworkAds.InitL
      * @param context Application or Activity.
      */
     static void initialize(Context context) {
-       
-        AdSettings.turnOnSDKDebugger(context);
+       /**
+       *  AdSettings.turnOnSDKDebugger(context);
+       */
+      
           AudienceNetworkAds
                 .buildInitSettings(context)
                 .withInitListener(new AudienceNetworkInitializeHelper())
