@@ -47,7 +47,10 @@ public class AudienceNetworkInitializeHelper implements AudienceNetworkAds.InitL
         ArrayList<String> placements = new ArrayList<>();
         placements.add("435354850481316_435355717147896");
         
-                        .withPlacementIds(placements)
+        .withPlacementIds(placements)
+                        
+                        
+        .withMediationService("GOOGLE: 17.2.1")
         
        */
         AdSettings.turnOnSDKDebugger(context);
@@ -55,7 +58,7 @@ public class AudienceNetworkInitializeHelper implements AudienceNetworkAds.InitL
         
           AudienceNetworkAds
                 .buildInitSettings(context)
-                .withMediationService("GOOGLE: 17.2.1")
+                .withMediationService("GOOGLE:"+ BuildConfig.VERSION_NAME)
                 .withInitListener(new AudienceNetworkInitializeHelper())
                 .initialize();
              
