@@ -43,7 +43,7 @@ public class AudienceNetworkInitializeHelper implements AudienceNetworkAds.InitL
        /**
        *  AdSettings.turnOnSDKDebugger(context);
        */
-      
+        AdSettings.turnOnSDKDebugger(context);
           AudienceNetworkAds
                 .buildInitSettings(context)
                 .withInitListener(new AudienceNetworkInitializeHelper())
