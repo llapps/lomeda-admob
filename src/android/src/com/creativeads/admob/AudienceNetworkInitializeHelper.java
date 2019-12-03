@@ -40,7 +40,10 @@ public class AudienceNetworkInitializeHelper implements AudienceNetworkAds.InitL
      * @param context Application or Activity.
      */
     static void initialize(Context context) {
-          AudienceNetworkAds.initialize();
+          AudienceNetworkAds.buildInitSettings(context)
+                .withMediationService("GOOGLE: 17.2.1")
+                .withInitListener(new AudienceNetworkInitializeHelper())
+                .initialize();
              
             Log.d("olli", "facebook init");
  
