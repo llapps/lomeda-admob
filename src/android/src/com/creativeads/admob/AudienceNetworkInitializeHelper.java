@@ -55,7 +55,7 @@ public class AudienceNetworkInitializeHelper implements AudienceNetworkAds.InitL
         
           AudienceNetworkAds
                 .buildInitSettings(context)
-                .withMediationService("GOOGLE: 5.4.0.0")
+                .withMediationService("GOOGLE: 17.2.1")
                 .withInitListener(new AudienceNetworkInitializeHelper())
                 .initialize();
              
