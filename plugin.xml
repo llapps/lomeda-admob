@@ -27,6 +27,7 @@
         <source-file src="src/android/src/com/creativeads/admob/AdInterstitialAdMob.java" target-dir="src/com/creativeads/admob"/>
         <source-file src="src/android/src/com/creativeads/admob/AdRewardedAdMob.java" target-dir="src/com/creativeads/admob"/>
         <source-file src="src/android/src/com/creativeads/admob/AdMobUtils.java" target-dir="src/com/creativeads/admob"/>
+            <source-file src="src/android/src/com/creativeads/admob/AudienceNetworkInitializeHelper.java" target-dir="src/com/creativeads/admob"/>
         
         <source-file src="src/android/src/com/creativeads/admob/AdServiceAdMob.java" target-dir="src/com/creativeads/admob"/>
         <source-file src="src/android/src/com/creativeads/cordova/AdMobPlugin.java" target-dir="src/com/creativeads/cordova"/>
