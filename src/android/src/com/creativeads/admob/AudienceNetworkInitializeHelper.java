@@ -43,15 +43,19 @@ public class AudienceNetworkInitializeHelper implements AudienceNetworkAds.InitL
     static void initialize(Context context) {
        /**
        *  AdSettings.turnOnSDKDebugger(context);
-       */
-        AdSettings.turnOnSDKDebugger(context);
+       
         ArrayList<String> placements = new ArrayList<>();
         placements.add("435354850481316_435355717147896");
+        
+                        .withPlacementIds(placements)
+        
+       */
+        AdSettings.turnOnSDKDebugger(context);
+       
         
           AudienceNetworkAds
                 .buildInitSettings(context)
                 .withMediationService("GOOGLE: 5.4.0.0")
-                .withPlacementIds(placements)
                 .withInitListener(new AudienceNetworkInitializeHelper())
                 .initialize();
              
