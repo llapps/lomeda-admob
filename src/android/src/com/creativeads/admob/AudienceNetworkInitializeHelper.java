@@ -43,7 +43,7 @@ public class AudienceNetworkInitializeHelper implements AudienceNetworkAds.InitL
           AudienceNetworkAds
                 .buildInitSettings(context)
                 .withInitListener(new AudienceNetworkInitializeHelper())
-                .withMediationService("GOOGLE: 17.2.1")
+                .withMediationService("GOOGLE: 5.4.0.0")
                 .initialize();
              
             Log.d("olli", "facebook init");
