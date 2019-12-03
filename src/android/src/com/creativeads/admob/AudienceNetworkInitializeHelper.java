@@ -42,7 +42,7 @@ public class AudienceNetworkInitializeHelper implements AudienceNetworkAds.InitL
     static void initialize(Context context) {
           AudienceNetworkAds.buildInitSettings(context)
                 .withMediationService("GOOGLE: 17.2.1")
-                .initialize();
+                .initialize(this);
              
             Log.d("olli", "facebook init");
  
