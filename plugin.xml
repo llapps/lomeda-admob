@@ -14,7 +14,7 @@
     <platform name="android">
         <preference name="APPLICATION_ID" default="ca-app-pub-6681943608991578~3835909604" />
         <preference name="PLAY_SERVICES_VERSION" default="17.2.1"/>
-        <preference name="FACEBOOK_MEDIATION_VERSION" default="5.6.0.0"/>
+        <preference name="FACEBOOK_MEDIATION_VERSION" default="5.4.0.0"/>
         <source-file src="src/android/src/com/creativeads/AdService.java" target-dir="src/com/creativeads"/>
         <source-file src="src/android/src/com/creativeads/AdBanner.java" target-dir="src/com/creativeads"/>
         <source-file src="src/android/src/com/creativeads/AbstractAdBanner.java" target-dir="src/com/creativeads"/>
