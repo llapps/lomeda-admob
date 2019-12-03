@@ -13,6 +13,35 @@ import com.creativeads.AdService;
 
 import org.json.JSONObject;
 
+public class AudienceNetworkInitializeHelper
+    implements AudienceNetworkAds.InitListener {
+
+    /**
+     * It's recommended to call this method from Application.onCreate().
+     * Otherwise you can call it from all Activity.onCreate()
+     * methods for Activities that contain ads.
+     *
+     * @param context Application or Activity.
+     */
+    static void initialize(Context context) {
+        if (!AudienceNetworkAds.isInitialized(context)) {
+            if (DEBUG) {
+                AdSettings.turnOnSDKDebugger(context);
+            }
+
+            AudienceNetworkAds
+                .buildInitSettings(context)
+                .withInitListener(new AudienceNetworkInitializeHelper())
+                .initialize();
+        }
+    }
+
+    @Override
+    public void onInitialized(AudienceNetworkAds.InitResult result) {
+        Log.d(AudienceNetworkAds.TAG, result.getMessage());
+    }
+}
+
 public class AdServiceAdMob implements AdService {
     private static final String TAG = "AdServiceAdMob";
     private boolean _initialized = false;
@@ -54,6 +83,7 @@ public class AdServiceAdMob implements AdService {
 
         if (!_initialized) {
             MobileAds.initialize(activity, appId);
+            AudienceNetworkInitializeHelper.initialize(context);
             _initialized = true;
         }
         _activity = activity;
