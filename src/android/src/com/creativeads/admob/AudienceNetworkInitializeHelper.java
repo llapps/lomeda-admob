@@ -27,8 +27,6 @@ import android.util.Log;
 import com.facebook.ads.AdSettings;
 import com.facebook.ads.AudienceNetworkAds;
 
-import static com.facebook.ads.BuildConfig.DEBUG;
-
 /**
  * Sample class that shows how to call initialize() method of Audience Network SDK.
  */
@@ -43,8 +41,7 @@ public class AudienceNetworkInitializeHelper
      * @param context Application or Activity.
      */
     static void initialize(Context context) {
-          AudienceNetworkAds
-                .buildInitSettings(context)
+          AudienceNetworkAds.buildInitSettings(context)
                 .withMediationService("GOOGLE: 17.2.1")
                 .withInitListener(new AudienceNetworkInitializeHelper())
                 .initialize();
