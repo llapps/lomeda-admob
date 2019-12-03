@@ -47,6 +47,7 @@ public class AudienceNetworkInitializeHelper
             .buildInitSettings(context)
             .withInitListener(new AudienceNetworkInitializeHelper())
             .initialize();
+        Log.d(TAG, "olfacebook init");
     }
 
     @Override
