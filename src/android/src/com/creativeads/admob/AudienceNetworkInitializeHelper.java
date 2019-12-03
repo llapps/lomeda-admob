@@ -43,11 +43,16 @@ public class AudienceNetworkInitializeHelper
      * @param context Application or Activity.
      */
     static void initialize(Context context) {
-        AudienceNetworkAds
-            .buildInitSettings(context)
-            .withInitListener(new AudienceNetworkInitializeHelper())
-            .initialize();
-        Log.d(TAG, "olfacebook init");
+         if (!AudienceNetworkAds.isInitialized(context)) {
+            if (DEBUG) {
+                AdSettings.turnOnSDKDebugger(context);
+            }
+            AudienceNetworkAds
+                .buildInitSettings(context)
+                .withInitListener(new AudienceNetworkInitializeHelper())
+                .initialize();
+            Log.d("olli", "facebook init");
+         }
     }
 
     @Override
