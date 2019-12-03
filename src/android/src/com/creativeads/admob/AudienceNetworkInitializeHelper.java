@@ -47,10 +47,13 @@ public class AudienceNetworkInitializeHelper
             if (DEBUG) {
                 AdSettings.turnOnSDKDebugger(context);
             }
-            AudienceNetworkAds
+             
+             AudienceNetworkAds
                 .buildInitSettings(context)
+                .withMediationService("GOOGLE:"+ BuildConfig.VERSION_NAME)
                 .withInitListener(new AudienceNetworkInitializeHelper())
                 .initialize();
+             
             Log.d("olli", "facebook init");
          }
     }
