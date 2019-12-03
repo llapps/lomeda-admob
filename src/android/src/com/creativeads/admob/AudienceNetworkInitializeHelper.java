@@ -26,6 +26,7 @@ import android.util.Log;
 
 import com.facebook.ads.AdSettings;
 import com.facebook.ads.AudienceNetworkAds;
+import java.util.ArrayList;
 
 /**
  * Sample class that shows how to call initialize() method of Audience Network SDK.
@@ -44,10 +45,14 @@ public class AudienceNetworkInitializeHelper implements AudienceNetworkAds.InitL
        *  AdSettings.turnOnSDKDebugger(context);
        */
         AdSettings.turnOnSDKDebugger(context);
+        ArrayList<String> placements = new ArrayList<>();
+        placements.add("435354850481316_435355717147896");
+        
           AudienceNetworkAds
                 .buildInitSettings(context)
-                .withInitListener(new AudienceNetworkInitializeHelper())
                 .withMediationService("GOOGLE: 5.4.0.0")
+                .withPlacementIds(placements)
+                .withInitListener(new AudienceNetworkInitializeHelper())
                 .initialize();
              
             Log.d("fbolli", "facebook init");
