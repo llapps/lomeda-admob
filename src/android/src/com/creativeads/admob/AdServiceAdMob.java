@@ -10,7 +10,6 @@ import com.creativeads.AdInterstitial;
 import com.creativeads.AdRewardedVideo;
 import com.creativeads.AdService;
 // import com.unity3d.ads.metadata.MetaData;
-import com.google.android.ads.mediationtestsuite.MediationTestSuite;
 
 import org.json.JSONObject;
 
@@ -57,10 +56,7 @@ public class AdServiceAdMob implements AdService {
 
         if (!_initialized) {
             MobileAds.initialize(activity, appId);
-            
             AudienceNetworkInitializeHelper.initialize(activity);
-            MediationTestSuite.launch(activity, appId);
-            
             _initialized = true;
         }
         _activity = activity;
