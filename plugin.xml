@@ -58,6 +58,7 @@
             <activity android:name="com.facebook.ads.AudienceNetworkActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
        </config-file>
 
+        <framework src="com.google.android.gms:play-services-measurement:17.2.1" />
         <framework src="com.google.android.gms:play-services-ads:$PLAY_SERVICES_VERSION" />
         <framework src="com.google.ads.mediation:facebook:$FACEBOOK_MEDIATION_VERSION" />
         <framework src="com.facebook.android:audience-network-sdk:5.6.0" />
