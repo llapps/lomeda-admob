@@ -56,6 +56,7 @@ public class AdServiceAdMob implements AdService {
 
         if (!_initialized) {
             MobileAds.initialize(activity, appId);
+            AppLovinSdk.initializeSdk(activity);
           //  AudienceNetworkInitializeHelper.initialize(activity);
             _initialized = true;
         }
