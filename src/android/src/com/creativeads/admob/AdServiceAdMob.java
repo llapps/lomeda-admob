@@ -14,10 +14,6 @@ import com.applovin.sdk.*;
 
 import org.json.JSONObject;
 
-import com.mopub.common.MoPub;
-import com.mopub.common.SdkConfiguration;
-
-
 public class AdServiceAdMob implements AdService {
     private static final String TAG = "AdServiceAdMob";
     private boolean _initialized = false;
@@ -62,9 +58,7 @@ public class AdServiceAdMob implements AdService {
             AppLovinSdk.initializeSdk(activity);
           //  AudienceNetworkInitializeHelper.initialize(activity);
             _initialized = true;
-            SdkConfiguration sdkConfiguration = new SdkConfiguration.Builder("32dcba71e99648a3973e7be48a2c9c77").build();
-            MoPub.initializeSdk(context, sdkConfiguration, null);
-
+          
         }
         _activity = activity;
         _bannerAdUnit = banner;
