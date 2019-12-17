@@ -5,7 +5,7 @@ import android.content.Context;
 import android.util.Log;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.ads.mediationtestsuite.MediationTestSuite;
+//import com.google.android.ads.mediationtestsuite.MediationTestSuite;
 import com.creativeads.AdBanner;
 import com.creativeads.AdInterstitial;
 import com.creativeads.AdRewardedVideo;
@@ -57,8 +57,8 @@ public class AdServiceAdMob implements AdService {
         if (!_initialized) {
             MobileAds.initialize(activity, appId);
             AppLovinSdk.initializeSdk(activity);
-            MediationTestSuite.addTestDevice("9B45C6730D606E8951D176909258C415"); 
-            MediationTestSuite.launch(activity);
+            //MediationTestSuite.addTestDevice("9B45C6730D606E8951D176909258C415"); 
+            //MediationTestSuite.launch(activity);
 
           //  AudienceNetworkInitializeHelper.initialize(activity);
             _initialized = true;
