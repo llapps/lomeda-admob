@@ -7,7 +7,6 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.creativeads.AbstractAdInterstitial;
-import com.google.android.ads.mediationtestsuite.MediationTestSuite;
 
 public class AdInterstitialAdMob extends AbstractAdInterstitial {
     private InterstitialAd _interstitial;
@@ -30,8 +29,6 @@ public class AdInterstitialAdMob extends AbstractAdInterstitial {
             @Override
             public void onAdClosed() {
                 notifyOnDismissed();
-                MediationTestSuite.addTestDevice("9B45C6730D606E8951D176909258C415"); 
-                MediationTestSuite.launch(MainActivity.this);
             }
 
             @Override
