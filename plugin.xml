@@ -14,7 +14,7 @@
     <platform name="android">
            
              <config-file target="res/values/strings.xml" parent="/*">
-            <string name="fb_app_id">1147461045332782</string>
+            <string name="fb_app_id">2478667835711719</string>
             <string name="fb_app_name">Dating App</string>
         </config-file> 
             
