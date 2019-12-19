@@ -78,6 +78,7 @@
  
         <framework src="com.google.ads.mediation:applovin:9.8.0.0" />
         <framework src="com.google.ads.mediation:unity:3.3.0.0" />
+            <framework src="com.facebook.android:facebook-core:5.13.0" />
         <framework src="android/build-extras.gradle" custom="true" type="gradleReference" />
     </platform>
    
