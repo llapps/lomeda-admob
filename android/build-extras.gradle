@@ -7,3 +7,5 @@ android {
 
 
 }
+android.enableJetifier=true
+android.useAndroidX=true
