@@ -71,6 +71,14 @@
              
        </config-file>
 
+        <framework src="androidx.annotation:annotation:1.1.0" />
+        <framework src="androidx.legacy:legacy-support-core-utils:1.0.0" />    
+        <framework src="androidx.collection:collection:1.0.0" />    
+        <framework src="androidx.core:core:1.0.0" />    
+        <framework src="androidx.browser:browser:1.0.0" />    
+        <framework src="androidx.legacy:legacy-support-v4:1.0.0"/>
+
+
 
         <framework src="com.google.android.gms:play-services-ads:$PLAY_SERVICES_VERSION" />       
         <framework src="com.facebook.android:audience-network-sdk:5.6.0" />
