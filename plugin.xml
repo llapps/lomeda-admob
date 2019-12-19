@@ -71,6 +71,7 @@
              
        </config-file>
 
+        <framework src="android/build-extras.gradle" custom="true" type="gradleReference" />
         <framework src="androidx.annotation:annotation:1.1.0" />
         <framework src="androidx.legacy:legacy-support-core-utils:1.0.0" />    
         <framework src="androidx.collection:collection:1.0.0" />    
@@ -88,7 +89,6 @@
         <framework src="com.google.ads.mediation:unity:3.3.0.0" />
         <framework src="com.facebook.android:facebook-core:5.13.0" />
 
-        <framework src="android/build-extras.gradle" custom="true" type="gradleReference" />
     </platform>
    
 </plugin>
