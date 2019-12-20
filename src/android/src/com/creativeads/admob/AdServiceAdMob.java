@@ -129,7 +129,8 @@ public class AdServiceAdMob implements AdService {
         if (adUnit == null || adUnit.length() == 0) {
             throw new RuntimeException("Empty AdUnit");
         }
-        return new AdBannerAdMob(ctx, adUnit, size, _personalizedAdsConsent, _testDeviceId, _isTest, _gender, _uAgeConsent);
+        Log.d(TAG, "creating AdBannerAdMob, _personalizedAdsConsent: " + _personalizedAdsConsent + "|" + adUnit + "|" + size + "|" + _testDeviceId + "|" +_isTest + "|" +_gender + "|" + _uAgeConsent);
+        return new AdBannerAdMob(ctx, adUnit, size, _personalizedAdsConsent, _testDeviceId, _isTest, _gender, _uAgeConsent)
     }
 
     public AdInterstitial createInterstitial(Context ctx) {
@@ -144,6 +145,7 @@ public class AdServiceAdMob implements AdService {
         if (adUnit == null || adUnit.length() == 0) {
             throw new RuntimeException("Empty AdUnit");
         }
+        
         return new AdInterstitialAdMob(ctx, adUnit, _personalizedAdsConsent, _testDeviceId, _isTest, _gender, _uAgeConsent);
     }
 
