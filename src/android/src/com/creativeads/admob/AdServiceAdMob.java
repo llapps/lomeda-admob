@@ -146,7 +146,7 @@ public class AdServiceAdMob implements AdService {
             throw new RuntimeException("Empty AdUnit");
         }
         
-        Log.d(TAG, "creating AdInterstitialAdMob, _personalizedAdsConsent: " + _personalizedAdsConsent + "|" + adUnit + "|" + size + "|" + _testDeviceId + "|" +_isTest + "|" +_gender + "|" + _uAgeConsent);
+        Log.d(TAG, "creating AdInterstitialAdMob, _personalizedAdsConsent: " + _personalizedAdsConsent + "|" + adUnit  + "|" + _testDeviceId + "|" +_isTest + "|" +_gender + "|" + _uAgeConsent);
        
         return new AdInterstitialAdMob(ctx, adUnit, _personalizedAdsConsent, _testDeviceId, _isTest, _gender, _uAgeConsent);
     }
