@@ -12,6 +12,7 @@ import com.creativeads.AdRewardedVideo;
 import com.creativeads.AdService;
 import com.applovin.sdk.*;
 // import com.unity3d.ads.metadata.MetaData;
+import com.facebook.ads.AdSettings;
 
 import org.json.JSONObject;
 
