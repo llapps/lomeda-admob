@@ -130,7 +130,7 @@ public class AdServiceAdMob implements AdService {
             throw new RuntimeException("Empty AdUnit");
         }
         Log.d(TAG, "creating AdBannerAdMob, _personalizedAdsConsent: " + _personalizedAdsConsent + "|" + adUnit + "|" + size + "|" + _testDeviceId + "|" +_isTest + "|" +_gender + "|" + _uAgeConsent);
-        return new AdBannerAdMob(ctx, adUnit, size, _personalizedAdsConsent, _testDeviceId, _isTest, _gender, _uAgeConsent)
+        return new AdBannerAdMob(ctx, adUnit, size, _personalizedAdsConsent, _testDeviceId, _isTest, _gender, _uAgeConsent);
     }
 
     public AdInterstitial createInterstitial(Context ctx) {
