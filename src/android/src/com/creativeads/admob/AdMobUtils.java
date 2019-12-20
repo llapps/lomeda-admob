@@ -31,6 +31,7 @@ public class AdMobUtils {
             
             case AdRequest.GENDER_FEMALE:
             case AdRequest.GENDER_MALE:
+                Log.d(TAG, "OLAdRequest.GENDER_MALE...");
                 req = req.setGender(gender);
                 break;
             default:
@@ -46,6 +47,7 @@ public class AdMobUtils {
             
             case AdRequest.TAG_FOR_UNDER_AGE_OF_CONSENT_TRUE:
             case AdRequest.TAG_FOR_UNDER_AGE_OF_CONSENT_FALSE:
+                Log.d(TAG, "OLAdRequest.TAG_FOR_UNDER_AGE_OF_CONSENT_FALSE...");
                 req = req.setTagForUnderAgeOfConsent(underAgeOfConsent);
                 break;
             default:
