@@ -50,7 +50,7 @@ public class AdMobUtils {
             case AdRequest.TAG_FOR_UNDER_AGE_OF_CONSENT_FALSE:
                 Log.d(TAG, "OLAdRequest.TAG_FOR_UNDER_AGE_OF_CONSENT_FALSE...");
                // req = req.setTagForUnderAgeOfConsent(underAgeOfConsent);
-                req = req.setTagForUnderAgeOfConsent(underAgeOfConsent);
+                req.setTagForUnderAgeOfConsent(underAgeOfConsent);
                 break;
             default:
                 break;
