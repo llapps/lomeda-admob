@@ -57,7 +57,6 @@ public class AdServiceAdMob implements AdService {
 
         if (!_initialized) {
             MobileAds.initialize(activity, appId);
-            MobileAds.openDebugMenu(activity, "ca-app-pub-6681943608991578/1044627740");
             AppLovinSdk.initializeSdk(activity);
             //MediationTestSuite.addTestDevice("9B45C6730D606E8951D176909258C415"); 
             //MediationTestSuite.launch(activity);
