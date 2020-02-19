@@ -10,7 +10,7 @@ import com.creativeads.AdBanner;
 import com.creativeads.AdInterstitial;
 import com.creativeads.AdRewardedVideo;
 import com.creativeads.AdService;
-import com.applovin.sdk.*;
+//import com.applovin.sdk.*;
 // import com.unity3d.ads.metadata.MetaData;
 
 
@@ -57,7 +57,7 @@ public class AdServiceAdMob implements AdService {
 
         if (!_initialized) {
             MobileAds.initialize(activity, appId);
-            AppLovinSdk.initializeSdk(activity);
+            //AppLovinSdk.initializeSdk(activity);
             //MediationTestSuite.addTestDevice("9B45C6730D606E8951D176909258C415"); 
             //MediationTestSuite.launch(activity);
             //AudienceNetworkInitializeHelper.initialize(activity);
