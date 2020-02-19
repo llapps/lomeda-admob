@@ -13,12 +13,7 @@
 
     <platform name="android">
            
-             <config-file target="res/values/strings.xml" parent="/*">
-            <string name="fb_app_id">2478667835711719</string>
-            <string name="fb_app_name">Dating App</string>
-        </config-file> 
-            
-        <preference name="APPLICATION_ID" default="ca-app-pub-6681943608991578~3835909604" />
+        <preference name="APPLICATION_ID" default="ca-app-pub-6681943608991578~3095290560" />
         <preference name="PLAY_SERVICES_VERSION" default="18.3.0"/>
 
         <source-file src="src/android/src/com/creativeads/AdService.java" target-dir="src/com/creativeads"/>
