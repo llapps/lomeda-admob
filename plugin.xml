@@ -20,7 +20,7 @@
             
         <preference name="APPLICATION_ID" default="ca-app-pub-6681943608991578~3835909604" />
         <preference name="PLAY_SERVICES_VERSION" default="18.3.0"/>
-        <preference name="FACEBOOK_MEDIATION_VERSION" default="5.6.0.0"/>
+
         <source-file src="src/android/src/com/creativeads/AdService.java" target-dir="src/com/creativeads"/>
         <source-file src="src/android/src/com/creativeads/AdBanner.java" target-dir="src/com/creativeads"/>
         <source-file src="src/android/src/com/creativeads/AbstractAdBanner.java" target-dir="src/com/creativeads"/>
@@ -58,30 +58,15 @@
             <!-- <application 
                 xmlns:tools="http://schemas.android.com/tools"
                 tools:replace="android:appComponentFactory" /> -->
-             <meta-data android:name="applovin.sdk.key" android:value="U9RgZxLdKFGcd0hiXuS_flFpUfmZIA07uzllTXVILGRtKXeV4-wzsTKIlkTnIBg94UnxHtrqGzDx5bVwMmvVuM" />
-            <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-6681943608991578~3835909604" />
+            <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-6681943608991578~3095290560" />
             <activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
-            <activity android:name="com.facebook.ads.AudienceNetworkActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
-
-                 <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/fb_app_id"/>
-            <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="@string/fb_app_name" />
-            <activity android:name="com.facebook.FacebookActivity" android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:label="@string/fb_app_name" />
-       
-             
-             
+              
        </config-file>
 
          <framework src="android/build-extras.gradle" custom="true" type="gradleReference" />
 
         <framework src="com.google.android.gms:play-services-ads:$PLAY_SERVICES_VERSION" />       
-        <framework src="com.facebook.android:audience-network-sdk:5.6.0" />
-        <framework src="com.google.ads.mediation:facebook:$FACEBOOK_MEDIATION_VERSION" />
- 
-        <framework src="com.google.ads.mediation:applovin:9.8.0.0" />
-        <framework src="com.google.ads.mediation:unity:3.3.0.0" />
-
-
-
+      
     </platform>
    
 </plugin>
